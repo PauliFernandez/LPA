@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans:wght@400;700&family=Poppins:wght@400;700;900&display=swap');
+
+h1{
+    font-family: 'Encode Sans',sans-serif;
+    font-size: 50px;
+    line-height: 60px;
+    color: #202020;
+    margin-bottom: 19px;
+}
+
+h2{
+    font-family: 'Encode Sans',sans-serif;
+    font-size: 20px;
+    line-height: 30px;
+    color: #202020;
+    margin-bottom: 39px;
+}
+
+img{
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    list-style: none;
+    padding: 0;
+    z-index: 1;
+}
+
+article{
+    font-family: 'Encode Sans',sans-serif;
+    max-width: 100%;
+    font-size: 19px;
+    line-height: 30px;
+    text-align: left!important;
+    color: #343434;
+    margin-bottom: 30px;
+}
+
+
+p{
+    font-family: 'Encode Sans',sans-serif;
+    max-width: 100%;
+    font-size: 19px;
+    line-height: 30px;
+    text-align: left!important;
+    color: #343434;
+    margin-bottom: 30px;
+}
+
+div{
+    border: 1px solid rgb(149, 191, 255);
+    width: 50%;
+    text-align: center;
+    margin: auto;
+    }
+
+label{
+    font-family: 'Mulish', 'bold';
+    font-size: 18pt;
+    color: #04146c;
+    font-weight: 700;
+}
+
+#surname, #name, #psw, #mail, #edad{
+    width:400px;
+    height: 50px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #414166;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+#log{
+    background-color: blue;
+    color: white;
+    font-weight: 600;
+}
+
+form {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  form input {
+    width: 90%;
+    height: 30px;
+    margin: 0.5rem;
+  }
+  
+  form button {
+    padding: 0.5em 1em;
+    border: none;
+    background: rgb(100, 200, 255);
+    cursor: pointer;
+  } 
