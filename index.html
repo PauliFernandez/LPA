@@ -4,16 +4,70 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <title>Mataron de varios tiros a un joven de 18 años en barrio Ludueña</title>
 </head>
 <body>
-    <h1>Mataron de varios tiros a un joven de 18 años en barrio Ludueña</h1>
-    <h2>
-        Mataron de varios tiros a un joven de 18 años en barrio Ludueña
-        Ocurrió en el mediodía de este viernes en Barra al 100, cerca de las vías del ferrocarril. Los disparos fueron realizados por dos sicarios en moto</h2>
-    <p>Un joven de 18 años fue asesinado a tiros en el mediodía de este viernes en Barra al 100, en barrio Ludueña, en la zona noroeste de Rosario. Aparentemente, lo atacaron dos sicarios que se desplazaban en una moto. La investigación la lleva adelante el fiscal de Homicidios Dolosos Ademar Bianchini.</p>
-    <p>La víctima, identificada como Juan Leiva, fue baleada cuando salió de su domicilio para hacer los mandados, de acuerdo a las primeras informaciones que recibió Rosario3. Fue trasladado al centro de salud del Distrito Noroeste, pero ya había fallecido.</p>
-    <p>Según los datos recolectados en un primer momento, el cuerpo del joven tenía seis heridas de arma de fuego. </p>
-    <p>El fiscal Bianchini ordenó la toma de testimonios, relevamiento de cámaras y levantamiento de material balístico a la comisaría 12ª y a la División de Homicidios de la Agencia de Investigación Criminal.</p>
+    <header>
+        <h1>Mataron de varios tiros a un joven de 18 años en barrio Ludueña</h1>
+    <h2>Ocurrió en el mediodía de este viernes en Barra al 100, cerca de las vías del ferrocarril. Los disparos fueron realizados por dos sicarios en moto</h2>
+    </header>
+    <figure>
+        <img src="/barra_y_tupac_amaru_crimen_juan_leiva_xanaisla_crop1682099604973.jpg_1756841869.jpg">
+        <figcaption>Pasadas las 14, en la escena del crimen sólo quedaban familiares y amigos masticando bronca. (Ana Isla/Rosario3)</figcaption>
+    </figure>
+    <article>      
+        <p>Un joven de 18 años fue asesinado a tiros en el mediodía de este viernes en Barra al 100, en barrio Ludueña, en la zona noroeste de Rosario. Aparentemente, lo atacaron dos sicarios que se desplazaban en una moto. La investigación la lleva adelante el fiscal de Homicidios Dolosos Ademar Bianchini.</p>
+        <p>La víctima, identificada como Juan Leiva, fue baleada cuando salió de su domicilio para hacer los mandados, de acuerdo a las primeras informaciones que recibió Rosario3. Fue trasladado al centro de salud del Distrito Noroeste, pero ya había fallecido.</p> 
+        <p>Según los datos recolectados en un primer momento, el cuerpo del joven tenía seis heridas de arma de fuego. </p>
+        <p>El fiscal Bianchini ordenó la toma de testimonios, relevamiento de cámaras y levantamiento de material balístico a la comisaría 12ª y a la División de Homicidios de la Agencia de Investigación Criminal.</p>
+    </article>
+    <div id="contenedorForm">
+        <form action="enviar.php" method="post">
+            <h1>FORMULARIO DE CONTACTO </h1>
+            <!-- Forma 1 de asociar label con input -->
+            <label for="nombre">Nombre:
+                <input type="text" 
+                    id="name" 
+                    name="nombre" 
+                    maxlength="10" 
+                    placeholder="Escribí tu nombre aquí"
+                    required></label> <br> <br>
+            <!-- Forma 2 de asociar label con input -->
+            <label >Apellido: 
+                <input type="text" name="apellido" id="surname" maxlength="10" placeholder="Escribí tu apellido aquí"></label> <br> <br>
+            <label> Contraseña 
+                <input type="password" id="psw" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$" placeholder="Escribí tu contraseña aquí"></label> <br><br>
+            <label> E-mail
+                 <input type="mail" id="mail" placeholder="Escribí tu mail"> </label> <br><br>
+            <label>Edad
+                <input id="edad" type="number" min="3" max="100"> </label> <br><br>
+            <input type="checkbox" value="acepto" name="acepto"> Acepto terminos y condiciones </input> <br><br>
+
+            <label> Seleccione su provincia</label><br><br>
+            <select name="provincias">
+                <option value="bsars">Buenos aires</option>
+                <option value="stafe">Santa fe</option>
+                <option value="mdza">Mendoza</option>
+                <option value="elegir" selected>Elegir</option>
+            </select>
+            <br><br>
+            <label>Conocimientos informáticos</label> <br><br>
+            <select name="conocimientos" multiple>
+                <option value="HTML">HTML</option>
+                <option value="jS">JavaScript</option>
+                <option value="word">Word</option>
+                <option value="java">Javat</option>
+            </select> <br><br>
+            <!-- PRIMER FORMA DE DECLARAR BOTONES -->
+            <input type="submit" value="Suscribir">
+            <input type="reset" value="Limpiar campos">
+        </form>
+    </div>
+    <footer>
+        <ul>
+            <li> <a href="index.html">Inicio</a> </li>
+        </ul>
+    </footer>
 </body>
 </html>
