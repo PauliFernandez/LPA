@@ -46,7 +46,7 @@ p{
     margin-bottom: 30px;
 }
 
-div{
+#contenedorForm{
     border: 1px solid rgb(149, 191, 255);
     width: 50%;
     text-align: center;
@@ -98,3 +98,42 @@ form {
     background: rgb(100, 200, 255);
     cursor: pointer;
   } 
+
+  @media screen and (min-width: 1025px) {
+    /* Estilos para pantallas de escritorio */
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 1024px) {
+    #contenedorForm {
+        border: none;
+    }
+
+    figure {
+        text-align: center;
+    }
+    article {
+        margin: 10px;
+    }
+    figure img {
+        max-width: 100%;
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    header {
+        margin: 0 10px
+    }
+
+    #contenedorForm {
+        border: none;
+    }
+
+    figure img {
+        width: 100%;
+    }
+
+    article {
+        margin: 20px;
+    }
+    /* Estilos para dispositivos móviles */
+  }
