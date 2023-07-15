@@ -11,6 +11,26 @@
  const postalCodeInput = document.getElementById('postal-code');
  const dniInput = document.getElementById('dni');
  const errorElements = document.getElementsByClassName('error');
+
+ iniciarDatos();
+
+ function iniciarDatos() {
+    var datosForm = localStorage.getItem('datos-form');
+
+    if (!!datosForm) {
+        datosFormJson = JSON.parse(datosForm);
+        fullNameInput.value = datosFormJson.fullname;
+        emailInput.value = datosFormJson.email;
+        passwordInput.value = datosFormJson.password;
+        confirmPasswordInput.value = datosFormJson['confirm-password']
+        ageInput.value = datosFormJson.age;
+        phoneInput.value = datosFormJson.phone;
+        addressInput.value = datosFormJson.address;
+        cityInput.value = datosFormJson.city;
+        postalCodeInput.value = datosFormJson['postal-code'];
+        dniInput.value = datosFormJson.dni;
+    }
+ }
  
  function showError(input, message) {
      const errorElement = document.getElementById(`${input.id}-error`);
@@ -154,11 +174,29 @@ function validateForm(e) {
   validateDNI();
   
   if (form.getElementsByClassName('error-input').length === 0) {
-      const formData = new FormData(form);
-      const formValues = Object.fromEntries(formData.entries());
-      // Aquí puedes mostrar el cartel emergente con la información cargada en el formulario
-      alert(JSON.stringify(formValues, null, 2));
-  }
+        fetch('https://jsonplaceholder.typicode.com/todos', {
+            method: 'GET',
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Error en la respuesta del servidor');
+                }
+                console.log(response);
+                return response;
+        })
+        .then(data => {
+            // Mostrar el mensaje de éxito o error en el modal
+            const formData = new FormData(form);
+            const formValues = Object.fromEntries(formData.entries());
+            const datosForm = JSON.stringify(formValues, null, 2);
+    
+            localStorage.setItem('datos-form', datosForm)
+        })
+        .catch(error => {
+            // Mostrar mensaje de error en el modal
+            alert('Ocurrió un error al procesar la solicitud\n\n' + error);
+        });
+    }
 }
 
 // Event Listeners
@@ -184,3 +222,32 @@ dniInput.addEventListener('blur', validateDNI);
 dniInput.addEventListener('focus', function () { clearError(dniInput); });
 form.addEventListener('submit', validateForm);
   
+
+// Función para mostrar el modal
+function showModal() {
+    const modal = document.getElementById("myModal");
+    modal.style.display = "block";
+}
+
+// Función para ocultar el modal
+function hideModal() {
+    const modal = document.getElementById("myModal");
+    modal.style.display = "none";
+}
+
+// Agrega un manejador de eventos para mostrar el modal cuando se envía el formulario
+document.getElementById("myForm").addEventListener("submit", function (event) {
+    event.preventDefault();
+    showModal();
+});
+
+// Agrega un manejador de eventos para ocultar el modal cuando se hace clic en el botón "Cerrar"
+document.querySelector(".close").addEventListener("click", hideModal);
+
+// Agrega un manejador de eventos para ocultar el modal cuando se hace clic fuera del modal
+window.addEventListener("click", function (event) {
+    const modal = document.getElementById("myModal");
+    if (event.target == modal) {
+        hideModal();
+    }
+});
